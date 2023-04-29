@@ -60,9 +60,9 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 ## Reads in saved classification model
  
        
-model_CategoricalNB_clf = pickle.load(open('D:\pklfiles\model_CategoricalNB.pkl', 'rb'))
-model_decision_tree_clf = pickle.load(open('D:\pklfiles\model_decision_tree.pkl', 'rb'))
-model_LogisticRegression_clf = pickle.load(open('D:\pklfiles\model_LogisticRegression.pkl', 'rb'))
+model_CategoricalNB_clf = pickle.load(open('model_CategoricalNB.pkl', 'rb'))
+model_decision_tree_clf = pickle.load(open('model_decision_tree.pkl', 'rb'))
+model_LogisticRegression_clf = pickle.load(open('model_LogisticRegression.pkl', 'rb'))
 ## Apply model to make predictions
 
 y_pred_decision_tree=model_decision_tree_clf.predict(X_test)
@@ -160,5 +160,5 @@ if DisplayCategoricalNB_button:
 st.write(''' 
 ### Show Decistion Tree  ''')
 
-image = Image.open('D:\pklfiles\decistion_tree.png')
+image = Image.open('model-building\decistion_tree.png')
 st.image(image, caption='Decistion Tree')

@@ -50,8 +50,7 @@ Data obtained from the [Used Cars DataSet | Kaggle](https://www.kaggle.com/datas
 
 
 
-#df1 = pd.read_csv('vehicles_new1.csv')
-df1 = pd.read_csv('https://raw.githubusercontent.com/MeretKhadour/ClassificationWDE/main/MeretWDE/vehicles_new1.csv')
+df1 = pd.read_csv('vehicles_new1.csv')
 df_clean = pd.DataFrame(df1)
 
 X =df_clean[['price_num', 'year_num', 'manufacturer_num', 'model_num', 'condition_num', 'cylinders_num',
@@ -85,11 +84,9 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 
 ## Reads in saved classification model
  
-#model_CategoricalNB_clf = pickle.load(open('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/model_CategoricalNB.pkl', 'rb'))
-model_CategoricalNB_clf = pickle.load(open('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/model_CategoricalNB.pkl', 'rb'))
-model_decision_tree_clf = pickle.load(open('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/model_decision_tree.pkl', 'rb'))
-model_LogisticRegression_clf = pickle.load(open('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/model_LogisticRegression.pkl', 'rb'))
-
+model_CategoricalNB_clf = pickle.load(open('model_CategoricalNB.pkl', 'rb'))
+model_decision_tree_clf = pickle.load(open('model_decision_tree.pkl', 'rb'))
+model_LogisticRegression_clf = pickle.load(open('model_LogisticRegression.pkl', 'rb'))
 ## Apply model to make predictions
 
 y_pred_decision_tree=model_decision_tree_clf.predict(X_test)
@@ -195,11 +192,9 @@ if DisplayCategoricalNB_button:
 
 st.write(''' 
 ### Show Decistion Tree  ''')
-image = Image.open('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/model-building/decistion_tree.png')
+image = Image.open('model-building\decistion_tree.png')
 st.image(image, caption='Decistion Tree')
 
 
 
-from sklearn.metrics import classification_report
-print('\nClassification Report decision tree\n')
-print(classification_report(y_test, y_pred_decision_tree)) 
+ 

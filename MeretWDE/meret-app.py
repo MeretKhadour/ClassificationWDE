@@ -37,7 +37,7 @@ Data obtained from the [Used Cars DataSet | Kaggle](https://www.kaggle.com/datas
 
 
 
-df1 = pd.read_csv('vehicles_new1.csv')
+df1 = pd.read_csv('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/vehicles_new1.csv')
 df_clean = pd.DataFrame(df1)
 
 X =df_clean[['price_num', 'year_num', 'manufacturer_num', 'model_num', 'condition_num', 'cylinders_num',

@@ -1,7 +1,7 @@
 from PIL import Image
 import streamlit as st
 import numpy as np
-
+import matplotlib.pyplot as plt 
 import pandas as pd
 import pickle
 
@@ -42,7 +42,10 @@ y =  df_clean['type_num']
 count_values = y.value_counts()
 #print(count_values)
 labels = count_values.index.to_list()
-
+fig, ax = plt.subplots()
+ax.set_title('class distrbuation before resampling')
+ax.pie(x = count_values,labels = labels,autopct ='%1.1f%%')
+st.pyplot(fig)
 
 
 oversample = SMOTE()
@@ -51,6 +54,10 @@ count_values = y.value_counts()
 #print(count_values)
 labels = count_values.index.to_list()
 
+fig, ax = plt.subplots()
+ax.set_title('class distrbuation after resampling')
+ax.pie(x = count_values,labels = labels,autopct ='%1.1f%%')
+st.pyplot(fig)
 
 
 
@@ -120,19 +127,28 @@ ConfusionMatrixCategoricalNB_button = st.button('CategoricalNB ')
 if ConfusionMatrixLogisticRegression_button==True:
     st.write(''' Confusion Matrix Logistic Regression ''')
     st.write(confusion_LogisticRegression)
-    
+    fig1, ax1 = plt.subplots()
+    ax1.set_title('Logistic Regression')
+    ax1.imshow(confusion_LogisticRegression)
+    st.pyplot(fig1)
 
 
 
 if ConfusionMatrixCategoricalNB_button==True:
     st.write(''' Confusion Matrix CategoricalNB ''')
     st.write(confusion_CategoricalNB)
-    
+    fig2, ax2 = plt.subplots()
+    ax2.set_title('CategoricalNB')
+    ax2.imshow(confusion_CategoricalNB)
+    st.pyplot(fig2)
 
 if ConfusionMatrixDecisionTree_button==True:
     st.write(''' Confusion Matrix Decision Tree ''')
     st.write(confusion_decision_tree)
-    
+    fig, ax = plt.subplots()
+    ax.set_title('Decision Tree')
+    ax.imshow(confusion_decision_tree)
+    st.pyplot(fig)
 
 
 

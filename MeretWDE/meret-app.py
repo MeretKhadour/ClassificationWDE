@@ -182,7 +182,8 @@ if DisplayCategoricalNB_button:
 
 st.write(''' 
 ### Show Decistion Tree  ''')
-image = Image.open('https://github.com/MeretKhadour/ClassificationWDE/blob/main/MeretWDE/model-building/decistion_tree.png')
+
+image = Image.open('D:\pklfiles\decistion_tree.png')
 st.image(image, caption='Decistion Tree')
 
 

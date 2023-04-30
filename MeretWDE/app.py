@@ -69,7 +69,7 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 
        
 model_CategoricalNB_clf = []
-with (open("model_LogisticRegression.pkl", "rb")) as openfile:
+with (open('model_LogisticRegression.pkl', 'rb')) as openfile:
     while True:
         try:
             model_CategoricalNB_clf.append(pickle.load(openfile))

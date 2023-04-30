@@ -67,7 +67,7 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 ## Reads in saved classification model
  
 
-model_CategoricalNB_clf = pickle.Unpickler.load(open('D:\pklfiles\model_CategoricalNB.pkl'))
+model_CategoricalNB_clf = pickle.load(open('./model_CategoricalNB.pkl','rb'))
 
  
 model_decision_tree_clf = []

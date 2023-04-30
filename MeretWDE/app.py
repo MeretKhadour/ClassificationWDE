@@ -73,7 +73,7 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 ## Reads in saved classification model
  
 
-model_CategoricalNB_clf = CategoricalNB(alpha=0,force_alpha=True).fit(X_train,y_train )
+model_CategoricalNB_clf = CategoricalNB(alpha=0).fit(X_train,y_train )
 model_decision_tree_clf = DecisionTreeClassifier().fit(X_train,y_train)
 model_LogisticRegression_clf = LogisticRegression(random_state=0).fit(X_train,y_train )
 

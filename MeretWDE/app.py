@@ -4,6 +4,12 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import pandas as pd
 import pickle
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn import tree
+from imblearn.over_sampling import SMOTE
+from sklearn.naive_bayes import CategoricalNB
+from sklearn.linear_model import LogisticRegression
 
 from sklearn.metrics import confusion_matrix , ConfusionMatrixDisplay
 from sklearn.metrics import accuracy_score

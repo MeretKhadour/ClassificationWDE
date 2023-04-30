@@ -67,29 +67,10 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 ## Reads in saved classification model
  
 
-model_CategoricalNB_clf = pickle.load(open('./model_CategoricalNB.pkl','rb'))
+model_CategoricalNB_clf = CategoricalNB(alpha=0,force_alpha=True).fit(X_train,y_train )
+model_decision_tree_clf = DecisionTreeClassifier().fit(X_train,y_train)
+model_LogisticRegression_clf = LogisticRegression(random_state=0).fit(X_train,y_train )
 
- 
-model_decision_tree_clf = []
-with (open("model_decision_tree_clf.pkl", "rb")) as openfile:
-    while True:
-        try:
-            model_decision_tree_clf.append(pickle.load(openfile))
-        except EOFError:
-            break
-model_LogisticRegression_clf = []
-with (open("model_LogisticRegression_clf.pkl", "rb")) as openfile:
-    while True:
-        try:
-            model_LogisticRegression_clf.append(pickle.load(openfile))
-        except EOFError:
-            break
-       
-#model_CategoricalNB_clf = pickle.load(open('model_LogisticRegression.pkl', 'rb'))
-
-#model_decision_tree_clf = pickle.load(open('model_decision_tree.pkl', 'rb'))
-#model_LogisticRegression_clf = pickle.load(open('model_LogisticRegression.pkl', 'rb'))
-## Apply model to make predictions
 
 y_pred_decision_tree=model_decision_tree_clf.predict(X_test)
 confusion_decision_tree = confusion_matrix(y_test, y_pred_decision_tree)

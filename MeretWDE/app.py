@@ -72,7 +72,7 @@ X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2)
 
 ## Reads in saved classification model
 
-model_CategoricalNB_clf = pickle.load(open('./model_CategoricalNB.pkl', 'rb')) 
+model_CategoricalNB_clf = pickle.load(open('https://raw.githubusercontent.com/MeretKhadour/ClassificationWDE/main/MeretWDE/model_decision_tree.sav', 'rb')) 
 model_decision_tree_clf = pickle.load(open('model_decision_tree.pkl', 'rb'))
 model_LogisticRegression_clf = pickle.load(open('model_LogisticRegression.pkl', 'rb'))
 

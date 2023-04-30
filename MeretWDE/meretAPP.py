@@ -1,33 +1,7 @@
-from PIL import Image
 import streamlit as st
-from streamlit import pyplot
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.ensemble import RandomForestClassifier
-import seaborn as sns
-import os
-from matplotlib import pyplot
-import matplotlib.pyplot as plt 
-from sklearn.preprocessing import LabelEncoder
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import confusion_matrix , ConfusionMatrixDisplay
-from sklearn.metrics import accuracy_score
-from sklearn.metrics import precision_score
-from sklearn.metrics import recall_score
-from sklearn.metrics import f1_score
-from sklearn.utils import resample
-from sklearn.model_selection import train_test_split
-from sklearn import tree
-from sklearn.tree import DecisionTreeClassifier, plot_tree
-from imblearn.over_sampling import SMOTE
-from sklearn.naive_bayes import CategoricalNB
-from sklearn.linear_model import LogisticRegression
-from sklearn.datasets import load_iris
-from tabulate import tabulate
-from urllib.request import urlopen
-import cloudpickle as cp
-
 st.write("""
 # Classification App
 

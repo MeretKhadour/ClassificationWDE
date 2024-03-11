@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.104.0"/>
+		<Timestamp>2024-03-11T07:05:33Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="string">
+			<Value value="AIR "/>
+			<Value value="BLOOD "/>
+			<Value value="NO TUBE "/>
+			<Value value="PLASMA "/>
+			<Value value="PLT "/>
+			<Value value="RPC "/>
+		</DataField>
+		<DataField name="r1_mean" optype="continuous" dataType="float"/>
+		<DataField name="g1_mean" optype="continuous" dataType="float"/>
+		<DataField name="var" optype="continuous" dataType="float"/>
+		<DataField name="C" optype="continuous" dataType="float"/>
+		<DataField name="Lux" optype="continuous" dataType="float"/>
+	</DataDictionary>
+	<TreeModel functionName="classification" algorithmName="sklearn.tree._classes.DecisionTreeClassifier" missingValueStrategy="nullPrediction">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="g1_mean"/>
+			<MiningField name="Lux"/>
+			<MiningField name="var"/>
+			<MiningField name="r1_mean"/>
+			<MiningField name="C"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(AIR )" optype="continuous" dataType="double" feature="probability" value="AIR "/>
+			<OutputField name="probability(BLOOD )" optype="continuous" dataType="double" feature="probability" value="BLOOD "/>
+			<OutputField name="probability(NO TUBE )" optype="continuous" dataType="double" feature="probability" value="NO TUBE "/>
+			<OutputField name="probability(PLASMA )" optype="continuous" dataType="double" feature="probability" value="PLASMA "/>
+			<OutputField name="probability(PLT )" optype="continuous" dataType="double" feature="probability" value="PLT "/>
+			<OutputField name="probability(RPC )" optype="continuous" dataType="double" feature="probability" value="RPC "/>
+		</Output>
+		<LocalTransformations>
+			<DerivedField name="double(g1_mean)" optype="continuous" dataType="double">
+				<FieldRef field="g1_mean"/>
+			</DerivedField>
+			<DerivedField name="double(Lux)" optype="continuous" dataType="double">
+				<FieldRef field="Lux"/>
+			</DerivedField>
+			<DerivedField name="double(var)" optype="continuous" dataType="double">
+				<FieldRef field="var"/>
+			</DerivedField>
+			<DerivedField name="double(r1_mean)" optype="continuous" dataType="double">
+				<FieldRef field="r1_mean"/>
+			</DerivedField>
+			<DerivedField name="double(C)" optype="continuous" dataType="double">
+				<FieldRef field="C"/>
+			</DerivedField>
+		</LocalTransformations>
+		<Node>
+			<True/>
+			<Node score="RPC " recordCount="1">
+				<SimplePredicate field="double(g1_mean)" operator="lessOrEqual" value="342.5"/>
+				<ScoreDistribution value="AIR " recordCount="0"/>
+				<ScoreDistribution value="BLOOD " recordCount="0"/>
+				<ScoreDistribution value="NO TUBE " recordCount="0"/>
+				<ScoreDistribution value="PLASMA " recordCount="0"/>
+				<ScoreDistribution value="PLT " recordCount="0"/>
+				<ScoreDistribution value="RPC " recordCount="1"/>
+			</Node>
+			<Node score="BLOOD " recordCount="1">
+				<SimplePredicate field="double(Lux)" operator="lessOrEqual" value="109.5"/>
+				<ScoreDistribution value="AIR " recordCount="0"/>
+				<ScoreDistribution value="BLOOD " recordCount="1"/>
+				<ScoreDistribution value="NO TUBE " recordCount="0"/>
+				<ScoreDistribution value="PLASMA " recordCount="0"/>
+				<ScoreDistribution value="PLT " recordCount="0"/>
+				<ScoreDistribution value="RPC " recordCount="0"/>
+			</Node>
+			<Node>
+				<SimplePredicate field="double(var)" operator="lessOrEqual" value="769.3349914550781"/>
+				<Node>
+					<SimplePredicate field="double(r1_mean)" operator="lessOrEqual" value="380.5"/>
+					<Node score="NO TUBE " recordCount="1">
+						<SimplePredicate field="double(C)" operator="lessOrEqual" value="403.5"/>
+						<ScoreDistribution value="AIR " recordCount="0"/>
+						<ScoreDistribution value="BLOOD " recordCount="0"/>
+						<ScoreDistribution value="NO TUBE " recordCount="1"/>
+						<ScoreDistribution value="PLASMA " recordCount="0"/>
+						<ScoreDistribution value="PLT " recordCount="0"/>
+						<ScoreDistribution value="RPC " recordCount="0"/>
+					</Node>
+					<Node score="PLASMA " recordCount="1">
+						<True/>
+						<ScoreDistribution value="AIR " recordCount="0"/>
+						<ScoreDistribution value="BLOOD " recordCount="0"/>
+						<ScoreDistribution value="NO TUBE " recordCount="0"/>
+						<ScoreDistribution value="PLASMA " recordCount="1"/>
+						<ScoreDistribution value="PLT " recordCount="0"/>
+						<ScoreDistribution value="RPC " recordCount="0"/>
+					</Node>
+				</Node>
+				<Node score="PLT " recordCount="1">
+					<True/>
+					<ScoreDistribution value="AIR " recordCount="0"/>
+					<ScoreDistribution value="BLOOD " recordCount="0"/>
+					<ScoreDistribution value="NO TUBE " recordCount="0"/>
+					<ScoreDistribution value="PLASMA " recordCount="0"/>
+					<ScoreDistribution value="PLT " recordCount="1"/>
+					<ScoreDistribution value="RPC " recordCount="0"/>
+				</Node>
+			</Node>
+			<Node score="AIR " recordCount="1">
+				<True/>
+				<ScoreDistribution value="AIR " recordCount="1"/>
+				<ScoreDistribution value="BLOOD " recordCount="0"/>
+				<ScoreDistribution value="NO TUBE " recordCount="0"/>
+				<ScoreDistribution value="PLASMA " recordCount="0"/>
+				<ScoreDistribution value="PLT " recordCount="0"/>
+				<ScoreDistribution value="RPC " recordCount="0"/>
+			</Node>
+		</Node>
+	</TreeModel>
+</PMML>

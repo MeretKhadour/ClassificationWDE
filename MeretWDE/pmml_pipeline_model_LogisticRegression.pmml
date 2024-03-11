@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.104.0"/>
+		<Timestamp>2024-03-11T07:05:34Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="string">
+			<Value value="AIR "/>
+			<Value value="BLOOD "/>
+			<Value value="NO TUBE "/>
+			<Value value="PLASMA "/>
+			<Value value="PLT "/>
+			<Value value="RPC "/>
+		</DataField>
+		<DataField name="R" optype="continuous" dataType="double"/>
+		<DataField name="G" optype="continuous" dataType="double"/>
+		<DataField name="B" optype="continuous" dataType="double"/>
+		<DataField name="Gray" optype="continuous" dataType="double"/>
+		<DataField name="r1_mean" optype="continuous" dataType="double"/>
+		<DataField name="g1_mean" optype="continuous" dataType="double"/>
+		<DataField name="b1_mean" optype="continuous" dataType="double"/>
+		<DataField name="var" optype="continuous" dataType="double"/>
+		<DataField name="C" optype="continuous" dataType="double"/>
+		<DataField name="Temp" optype="continuous" dataType="double"/>
+		<DataField name="Lux" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<RegressionModel functionName="classification" algorithmName="sklearn.linear_model._logistic.LogisticRegression" normalizationMethod="softmax">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="R"/>
+			<MiningField name="G"/>
+			<MiningField name="B"/>
+			<MiningField name="Gray"/>
+			<MiningField name="r1_mean"/>
+			<MiningField name="g1_mean"/>
+			<MiningField name="b1_mean"/>
+			<MiningField name="var"/>
+			<MiningField name="C"/>
+			<MiningField name="Temp"/>
+			<MiningField name="Lux"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(AIR )" optype="continuous" dataType="double" feature="probability" value="AIR "/>
+			<OutputField name="probability(BLOOD )" optype="continuous" dataType="double" feature="probability" value="BLOOD "/>
+			<OutputField name="probability(NO TUBE )" optype="continuous" dataType="double" feature="probability" value="NO TUBE "/>
+			<OutputField name="probability(PLASMA )" optype="continuous" dataType="double" feature="probability" value="PLASMA "/>
+			<OutputField name="probability(PLT )" optype="continuous" dataType="double" feature="probability" value="PLT "/>
+			<OutputField name="probability(RPC )" optype="continuous" dataType="double" feature="probability" value="RPC "/>
+		</Output>
+		<RegressionTable intercept="-5.919969538554682E-5" targetCategory="AIR ">
+			<NumericPredictor name="R" coefficient="-0.0017340071672142254"/>
+			<NumericPredictor name="G" coefficient="-6.183343315877806E-4"/>
+			<NumericPredictor name="B" coefficient="1.4954077060644902E-4"/>
+			<NumericPredictor name="Gray" coefficient="-0.0022033869625899347"/>
+			<NumericPredictor name="r1_mean" coefficient="0.22325023220923237"/>
+			<NumericPredictor name="g1_mean" coefficient="0.09771487313057543"/>
+			<NumericPredictor name="b1_mean" coefficient="-0.04040520636599451"/>
+			<NumericPredictor name="var" coefficient="0.09352005985472017"/>
+			<NumericPredictor name="C" coefficient="-0.0054267360017894025"/>
+			<NumericPredictor name="Temp" coefficient="-0.046700327574467786"/>
+			<NumericPredictor name="Lux" coefficient="-7.401490670671608E-4"/>
+		</RegressionTable>
+		<RegressionTable intercept="4.6985324043439744E-5" targetCategory="BLOOD ">
+			<NumericPredictor name="R" coefficient="0.004505277880334594"/>
+			<NumericPredictor name="G" coefficient="0.00671745904115021"/>
+			<NumericPredictor name="B" coefficient="9.850610253598234E-4"/>
+			<NumericPredictor name="Gray" coefficient="0.012203372742311794"/>
+			<NumericPredictor name="r1_mean" coefficient="-0.10357986526364486"/>
+			<NumericPredictor name="g1_mean" coefficient="-0.08161331265437767"/>
+			<NumericPredictor name="b1_mean" coefficient="0.06167330891303178"/>
+			<NumericPredictor name="var" coefficient="-0.04117138083688121"/>
+			<NumericPredictor name="C" coefficient="0.036161835270543216"/>
+			<NumericPredictor name="Temp" coefficient="0.01968069036048378"/>
+			<NumericPredictor name="Lux" coefficient="0.006511479670118399"/>
+		</RegressionTable>
+		<RegressionTable intercept="-6.298979692630794E-6" targetCategory="NO TUBE ">
+			<NumericPredictor name="R" coefficient="-0.0020304409806895184"/>
+			<NumericPredictor name="G" coefficient="-0.003227515074433484"/>
+			<NumericPredictor name="B" coefficient="-6.369294343843273E-4"/>
+			<NumericPredictor name="Gray" coefficient="-0.0058939468461000595"/>
+			<NumericPredictor name="r1_mean" coefficient="-0.015466340368728897"/>
+			<NumericPredictor name="g1_mean" coefficient="-3.481543795605603E-4"/>
+			<NumericPredictor name="b1_mean" coefficient="-0.013663649761757908"/>
+			<NumericPredictor name="var" coefficient="-0.009825648375347886"/>
+			<NumericPredictor name="C" coefficient="-0.019046304431675265"/>
+			<NumericPredictor name="Temp" coefficient="0.014658696471566965"/>
+			<NumericPredictor name="Lux" coefficient="-0.0022535822964570903"/>
+		</RegressionTable>
+		<RegressionTable intercept="4.1590218883669036E-5" targetCategory="PLASMA ">
+			<NumericPredictor name="R" coefficient="0.006814530716137944"/>
+			<NumericPredictor name="G" coefficient="0.01385135170759856"/>
+			<NumericPredictor name="B" coefficient="0.0017914631806476796"/>
+			<NumericPredictor name="Gray" coefficient="0.02245804044299759"/>
+			<NumericPredictor name="r1_mean" coefficient="-0.10943303662086516"/>
+			<NumericPredictor name="g1_mean" coefficient="0.09866181670144875"/>
+			<NumericPredictor name="b1_mean" coefficient="0.13687593946445897"/>
+			<NumericPredictor name="var" coefficient="0.042040977430296576"/>
+			<NumericPredictor name="C" coefficient="0.056057784140159536"/>
+			<NumericPredictor name="Temp" coefficient="-0.018580736236810877"/>
+			<NumericPredictor name="Lux" coefficient="0.01799912277875843"/>
+		</RegressionTable>
+		<RegressionTable intercept="-3.929865124220439E-5" targetCategory="PLT ">
+			<NumericPredictor name="R" coefficient="-0.004294038482884281"/>
+			<NumericPredictor name="G" coefficient="-0.006224250630606569"/>
+			<NumericPredictor name="B" coefficient="-9.60692594677165E-4"/>
+			<NumericPredictor name="Gray" coefficient="-0.011478824329660894"/>
+			<NumericPredictor name="r1_mean" coefficient="0.09520156625929252"/>
+			<NumericPredictor name="g1_mean" coefficient="0.07623301224373458"/>
+			<NumericPredictor name="b1_mean" coefficient="-0.09030203781876908"/>
+			<NumericPredictor name="var" coefficient="0.027038617719774283"/>
+			<NumericPredictor name="C" coefficient="-0.024732573671073822"/>
+			<NumericPredictor name="Temp" coefficient="-0.008257797874666576"/>
+			<NumericPredictor name="Lux" coefficient="-0.005566941681211919"/>
+		</RegressionTable>
+		<RegressionTable intercept="1.6221783393384843E-5" targetCategory="RPC ">
+			<NumericPredictor name="R" coefficient="-0.003261321965679439"/>
+			<NumericPredictor name="G" coefficient="-0.01049871071206919"/>
+			<NumericPredictor name="B" coefficient="-0.0013284429475536247"/>
+			<NumericPredictor name="Gray" coefficient="-0.01508525504700308"/>
+			<NumericPredictor name="r1_mean" coefficient="-0.08997255621511226"/>
+			<NumericPredictor name="g1_mean" coefficient="-0.19064823504148998"/>
+			<NumericPredictor name="b1_mean" coefficient="-0.054178354430720076"/>
+			<NumericPredictor name="var" coefficient="-0.11160262579206164"/>
+			<NumericPredictor name="C" coefficient="-0.04301400530618119"/>
+			<NumericPredictor name="Temp" coefficient="0.03919947485457091"/>
+			<NumericPredictor name="Lux" coefficient="-0.015949929404133575"/>
+		</RegressionTable>
+	</RegressionModel>
+</PMML>

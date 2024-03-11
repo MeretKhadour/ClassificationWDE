@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.4">
+	<Header>
+		<Application name="SkLearn2PMML package" version="0.104.0"/>
+		<Timestamp>2024-03-11T07:05:37Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="string">
+			<Value value="AIR "/>
+			<Value value="BLOOD "/>
+			<Value value="NO TUBE "/>
+			<Value value="PLASMA "/>
+			<Value value="PLT "/>
+			<Value value="RPC "/>
+		</DataField>
+		<DataField name="R" optype="continuous" dataType="double"/>
+		<DataField name="G" optype="continuous" dataType="double"/>
+		<DataField name="B" optype="continuous" dataType="double"/>
+		<DataField name="Gray" optype="continuous" dataType="double"/>
+		<DataField name="r1_mean" optype="continuous" dataType="double"/>
+		<DataField name="g1_mean" optype="continuous" dataType="double"/>
+		<DataField name="b1_mean" optype="continuous" dataType="double"/>
+		<DataField name="var" optype="continuous" dataType="double"/>
+		<DataField name="C" optype="continuous" dataType="double"/>
+		<DataField name="Temp" optype="continuous" dataType="double"/>
+		<DataField name="Lux" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<SupportVectorMachineModel functionName="classification" algorithmName="sklearn.svm._classes.SVC" classificationMethod="OneAgainstOne">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="R"/>
+			<MiningField name="G"/>
+			<MiningField name="B"/>
+			<MiningField name="Gray"/>
+			<MiningField name="r1_mean"/>
+			<MiningField name="g1_mean"/>
+			<MiningField name="b1_mean"/>
+			<MiningField name="var"/>
+			<MiningField name="C"/>
+			<MiningField name="Temp"/>
+			<MiningField name="Lux"/>
+		</MiningSchema>
+		<LinearKernelType/>
+		<VectorDictionary>
+			<VectorFields>
+				<FieldRef field="R"/>
+				<FieldRef field="G"/>
+				<FieldRef field="B"/>
+				<FieldRef field="Gray"/>
+				<FieldRef field="r1_mean"/>
+				<FieldRef field="g1_mean"/>
+				<FieldRef field="b1_mean"/>
+				<FieldRef field="var"/>
+				<FieldRef field="C"/>
+				<FieldRef field="Temp"/>
+				<FieldRef field="Lux"/>
+			</VectorFields>
+			<VectorInstance id="5507">
+				<Array type="real">34.09 109.18 16.99 160.25 1225.0 1369.0 0.0 864.67 468.0 6370.0 147.0</Array>
+			</VectorInstance>
+			<VectorInstance id="2012">
+				<Array type="real">31.39 79.25 11.74 122.38 81.0 441.0 121.0 214.33 358.0 5128.0 103.0</Array>
+			</VectorInstance>
+			<VectorInstance id="2097">
+				<Array type="real">33.19 82.77 12.2 128.15 64.0 484.0 144.0 230.67 376.0 5063.0 108.0</Array>
+			</VectorInstance>
+			<VectorInstance id="3804">
+				<Array type="real">31.39 78.66 11.74 121.79 81.0 400.0 121.0 200.67 354.0 5128.0 102.0</Array>
+			</VectorInstance>
+			<VectorInstance id="4541">
+				<Array type="real">33.49 80.42 11.97 125.88 36.0 361.0 169.0 188.67 372.0 4962.0 103.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5325">
+				<Array type="real">34.09 81.01 12.08 127.18 25.0 361.0 169.0 185.0 374.0 4933.0 103.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5664">
+				<Array type="real">30.2 81.59 11.74 123.53 169.0 625.0 121.0 305.0 357.0 5276.0 111.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5671">
+				<Array type="real">29.9 81.59 11.74 123.23 196.0 625.0 121.0 314.0 358.0 5315.0 111.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5692">
+				<Array type="real">30.2 81.59 11.74 123.53 169.0 625.0 121.0 305.0 358.0 5276.0 111.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5699">
+				<Array type="real">29.9 81.59 11.74 123.23 196.0 625.0 121.0 314.0 357.0 5315.0 111.0</Array>
+			</VectorInstance>
+			<VectorInstance id="4168">
+				<Array type="real">38.57 102.14 14.36 155.07 196.0 961.0 289.0 482.0 452.0 5112.0 140.0</Array>
+			</VectorInstance>
+			<VectorInstance id="4270">
+				<Array type="real">38.57 107.42 15.16 161.15 361.0 1225.0 225.0 603.67 466.0 5319.0 149.0</Array>
+			</VectorInstance>
+			<VectorInstance id="784">
+				<Array type="real">35.28 103.31 14.71 153.3 529.0 1225.0 144.0 632.67 445.0 5556.0 145.0</Array>
+			</VectorInstance>
+			<VectorInstance id="3082">
+				<Array type="real">36.18 102.14 14.59 152.91 400.0 1089.0 169.0 552.67 448.0 5421.0 141.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5581">
+				<Array type="real">37.67 106.25 15.05 158.97 400.0 1225.0 196.0 607.0 464.0 5382.0 148.0</Array>
+			</VectorInstance>
+			<VectorInstance id="4915">
+				<Array type="real">28.7 71.61 10.72 111.03 64.0 324.0 100.0 162.67 326.0 5121.0 92.0</Array>
+			</VectorInstance>
+			<VectorInstance id="5560">
+				<Array type="real">29.6 72.79 10.94 113.33 49.0 324.0 100.0 157.67 333.0 5085.0 93.0</Array>
+			</VectorInstance>
+		</VectorDictionary>
+		<SupportVectorMachine targetCategory="BLOOD " alternateTargetCategory="AIR ">
+			<SupportVectors>
+				<SupportVector vectorId="5507"/>
+				<SupportVector vectorId="2012"/>
+				<SupportVector vectorId="2097"/>
+				<SupportVector vectorId="3804"/>
+				<SupportVector vectorId="4541"/>
+				<SupportVector vectorId="5325"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-4.382574612454793">
+				<Coefficient value="4.800226477516092E-7"/>
+				<Coefficient value="-4.800226477516092E-7"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="NO TUBE " alternateTargetCategory="AIR ">
+			<SupportVectors>
+				<SupportVector vectorId="5507"/>
+				<SupportVector vectorId="5664"/>
+				<SupportVector vectorId="5671"/>
+				<SupportVector vectorId="5692"/>
+				<SupportVector vectorId="5699"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-5.238615736070173">
+				<Coefficient value="6.538395875016956E-7"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-6.538395875016956E-7"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLASMA " alternateTargetCategory="AIR ">
+			<SupportVectors>
+				<SupportVector vectorId="5507"/>
+				<SupportVector vectorId="4168"/>
+				<SupportVector vectorId="4270"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-7.215213382253176">
+				<Coefficient value="1.0047160215164644E-6"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-1.0047160215164644E-6"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLT " alternateTargetCategory="AIR ">
+			<SupportVectors>
+				<SupportVector vectorId="5507"/>
+				<SupportVector vectorId="784"/>
+				<SupportVector vectorId="3082"/>
+				<SupportVector vectorId="5581"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-9.37604307678796">
+				<Coefficient value="1.6091059389204935E-6"/>
+				<Coefficient value="-1.6091059389204935E-6"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="RPC " alternateTargetCategory="AIR ">
+			<SupportVectors>
+				<SupportVector vectorId="5507"/>
+				<SupportVector vectorId="4915"/>
+				<SupportVector vectorId="5560"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-4.078668264500264">
+				<Coefficient value="4.4151666593059394E-7"/>
+				<Coefficient value="-4.4151666593059394E-7"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="NO TUBE " alternateTargetCategory="BLOOD ">
+			<SupportVectors>
+				<SupportVector vectorId="2012"/>
+				<SupportVector vectorId="2097"/>
+				<SupportVector vectorId="3804"/>
+				<SupportVector vectorId="4541"/>
+				<SupportVector vectorId="5325"/>
+				<SupportVector vectorId="5664"/>
+				<SupportVector vectorId="5671"/>
+				<SupportVector vectorId="5692"/>
+				<SupportVector vectorId="5699"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="25.172376284101617">
+				<Coefficient value="2.785599498495743E-5"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-2.785599498495743E-5"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLASMA " alternateTargetCategory="BLOOD ">
+			<SupportVectors>
+				<SupportVector vectorId="2012"/>
+				<SupportVector vectorId="2097"/>
+				<SupportVector vectorId="3804"/>
+				<SupportVector vectorId="4541"/>
+				<SupportVector vectorId="5325"/>
+				<SupportVector vectorId="4168"/>
+				<SupportVector vectorId="4270"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="4.55569048143855">
+				<Coefficient value="0.0"/>
+				<Coefficient value="5.891332042874835E-6"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-5.891332042874835E-6"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLT " alternateTargetCategory="BLOOD ">
+			<SupportVectors>
+				<SupportVector vectorId="2012"/>
+				<SupportVector vectorId="2097"/>
+				<SupportVector vectorId="3804"/>
+				<SupportVector vectorId="4541"/>
+				<SupportVector vectorId="5325"/>
+				<SupportVector vectorId="784"/>
+				<SupportVector vectorId="3082"/>
+				<SupportVector vectorId="5581"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="7.234556013532352">
+				<Coefficient value="0.0"/>
+				<Coefficient value="2.782918644749827E-6"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-2.782918644749827E-6"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="RPC " alternateTargetCategory="BLOOD ">
+			<SupportVectors>
+				<SupportVector vectorId="2012"/>
+				<SupportVector vectorId="2097"/>
+				<SupportVector vectorId="3804"/>
+				<SupportVector vectorId="4541"/>
+				<SupportVector vectorId="5325"/>
+				<SupportVector vectorId="4915"/>
+				<SupportVector vectorId="5560"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="0.026471151949420846">
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="1.7083287917276136E-4"/>
+				<Coefficient value="4.466416026232661E-5"/>
+				<Coefficient value="2.693368648105407E-5"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-2.4243072591614202E-4"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLASMA " alternateTargetCategory="NO TUBE ">
+			<SupportVectors>
+				<SupportVector vectorId="5664"/>
+				<SupportVector vectorId="5671"/>
+				<SupportVector vectorId="5692"/>
+				<SupportVector vectorId="5699"/>
+				<SupportVector vectorId="4168"/>
+				<SupportVector vectorId="4270"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-4.0524704335423465">
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="9.467548286699658E-6"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-9.467548286699658E-6"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLT " alternateTargetCategory="NO TUBE ">
+			<SupportVectors>
+				<SupportVector vectorId="5664"/>
+				<SupportVector vectorId="5671"/>
+				<SupportVector vectorId="5692"/>
+				<SupportVector vectorId="5699"/>
+				<SupportVector vectorId="784"/>
+				<SupportVector vectorId="3082"/>
+				<SupportVector vectorId="5581"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="7.009788356858365">
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="5.918080117570201E-6"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-5.918080117570201E-6"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="RPC " alternateTargetCategory="NO TUBE ">
+			<SupportVectors>
+				<SupportVector vectorId="5664"/>
+				<SupportVector vectorId="5671"/>
+				<SupportVector vectorId="5692"/>
+				<SupportVector vectorId="5699"/>
+				<SupportVector vectorId="4915"/>
+				<SupportVector vectorId="5560"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-13.671879134076033">
+				<Coefficient value="1.3520075723848666E-5"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-1.3520075723848666E-5"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="PLT " alternateTargetCategory="PLASMA ">
+			<SupportVectors>
+				<SupportVector vectorId="4168"/>
+				<SupportVector vectorId="4270"/>
+				<SupportVector vectorId="784"/>
+				<SupportVector vectorId="3082"/>
+				<SupportVector vectorId="5581"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="109.01727262881468">
+				<Coefficient value="0.0"/>
+				<Coefficient value="3.1485678489393204E-4"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-0.0"/>
+				<Coefficient value="-3.1485678489393204E-4"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="RPC " alternateTargetCategory="PLASMA ">
+			<SupportVectors>
+				<SupportVector vectorId="4168"/>
+				<SupportVector vectorId="4270"/>
+				<SupportVector vectorId="4915"/>
+				<SupportVector vectorId="5560"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-2.004878752082881">
+				<Coefficient value="3.4356706767616045E-6"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-3.4356706767616045E-6"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+		<SupportVectorMachine targetCategory="RPC " alternateTargetCategory="PLT ">
+			<SupportVectors>
+				<SupportVector vectorId="784"/>
+				<SupportVector vectorId="3082"/>
+				<SupportVector vectorId="5581"/>
+				<SupportVector vectorId="4915"/>
+				<SupportVector vectorId="5560"/>
+			</SupportVectors>
+			<Coefficients absoluteValue="-4.994464775248575">
+				<Coefficient value="0.0"/>
+				<Coefficient value="2.072486617749598E-6"/>
+				<Coefficient value="0.0"/>
+				<Coefficient value="-2.072486617749598E-6"/>
+				<Coefficient value="-0.0"/>
+			</Coefficients>
+		</SupportVectorMachine>
+	</SupportVectorMachineModel>
+</PMML>
